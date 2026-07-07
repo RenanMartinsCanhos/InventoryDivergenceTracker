@@ -15,7 +15,7 @@ O objetivo é construir um sistema que não só identifique divergências, mas
 padrões reais:
 
 - Movimentação física ocorrida sem registro no sistema
-- Erro de lançamento (quantidade ou item incorretos)
+- Erro de lançamento (quantidade ou stockItem incorretos)
 - Perda ou avaria não contabilizada
 - Atraso entre a movimentação física e o registro digital (timing)
 
@@ -39,9 +39,9 @@ padrões reais:
 
 ```
 Warehouse       -> armazém / filial
-StockItem       -> item de estoque (SKU, nome, categoria, quantidade teórica)
+StockItem       -> stockItem de estoque (SKU, nome, categoria, quantidade teórica)
 StockMovement   -> evento de movimentação (ENTRADA / SAÍDA / TRANSFERÊNCIA)
-PhysicalCount   -> contagem física (data, quantidade contada, item, armazém)
+PhysicalCount   -> contagem física (data, quantidade contada, stockItem, armazém)
 Divergence      -> resultado da reconciliação (esperado x contado, causa, status)
 ```
 
@@ -64,7 +64,7 @@ financeiro costumam ser modelados.
 ### Diferencial
 - [ ] Classificação automática de causa provável da divergência
   (via `DivergenceCauseAnalyzer`, usando Strategy Pattern)
-- [ ] Histórico auditável por item (quem alterou, quando, origem/destino)
+- [ ] Histórico auditável por stockItem (quem alterou, quando, origem/destino)
 - [ ] Relatório de reconciliação por período/armazém, com ranking dos itens
   mais divergentes
 
@@ -78,7 +78,7 @@ financeiro costumam ser modelados.
 
 ## Decisões Técnicas Relevantes (para discutir em entrevista)
 
-- **Event sourcing simplificado**: quantidade do item é derivada de eventos
+- **Event sourcing simplificado**: quantidade do stockItem é derivada de eventos
   imutáveis (`StockMovement`), não de um campo mutável direto.
 - **Strategy Pattern** para classificação de causa: cada regra de suspeita
   (atraso de lançamento, erro operacional, etc.) é uma implementação de

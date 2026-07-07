@@ -4,15 +4,15 @@ import javax.swing.*;
 
 public class CreateItemService {
 
-    Item item = new Item();
+    StockItem stockItem = new StockItem();
 
     public void CreateCodeItem() {
-        String prefixoCodigo = "BRA_";
-        String codigoItem = JOptionPane.showInputDialog("Digite o codigo do Item: ");
+        String prefixCode = "BRA_";
+        String codeItem = JOptionPane.showInputDialog("Digite o codigo do Item: ");
 
-        if (!codigoItem.isEmpty() && codigoItem.matches("^[a-zA-Z0-9]+$")){
-            String codigoCompleto = prefixoCodigo + codigoItem;
-            item.setCodigoItem(codigoCompleto);
+        if (!codeItem.isEmpty() && codeItem.matches("^[a-zA-Z0-9]+$")){
+            String codigoCompleto = prefixCode + codeItem;
+            stockItem.setCodigoItem(codigoCompleto);
         } else  {
             JOptionPane.showMessageDialog(null, "código invalido , o código não permite simbolos e valores em branco");
         }
