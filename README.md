@@ -81,15 +81,10 @@ Algumas decisões de arquitetura valem explicar:
 - [ ] Cálculo de divergência: teórico vs. contado
 
 **Diferencial**
-- [ ] Classificação automática de causa provável (`DivergenceCauseAnalyzer`)
-- [ ] Histórico auditável por item (quem alterou, quando, origem/destino)
-- [ ] Relatório de reconciliação por período/armazém, com ranking dos itens mais divergentes
-
-**Se sobrar tempo**
-- [ ] Dashboard com KPI de acuracidade de estoque
-- [ ] Importação de planilha simulando exportação do SAP
-- [ ] Notificação automática quando a divergência ultrapassar um limite configurável
-
+ Classificação automática de causa provável (`DivergenceCauseAnalyzer`)
+ Histórico auditável por item (quem alterou, quando, origem/destino)
+ Relatório de reconciliação por período/armazém, com ranking dos itens mais divergentes
+ 
 ---
 
 ## Roadmap
