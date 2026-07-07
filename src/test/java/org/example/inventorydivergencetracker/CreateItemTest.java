@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class CreateItemTest {
 
     @Test
-    void criacaoDoCodigoDoMaterial(){
+    void createCodeItem(){
         Item item = new Item();
         String prefixoCodigo = "BRA_";
         String codigoItem = "ENFERMARIA";
@@ -18,13 +18,22 @@ public class CreateItemTest {
         if (!codigoItem.isBlank() && codigoItem.matches("^[a-zA-Z0-9]+$")) {
             String codigoCompleto = prefixoCodigo + codigoItem;
             item.setCodigoItem(codigoCompleto);
-            System.out.println("novo código gerado: "+item.getCodigoItem());
         } else {
             System.out.println("tente novamente o código não aceita simbolos ,e valores em branco");
         }
 
-
-
         Assertions.assertEquals("BRA_ENFERMARIA",item.getCodigoItem());
+    }
+    @Test
+    void createNameItem(){
+        Item item = new Item();
+        String nomeItem = "KIT ENFERMARIA";
+
+        if (!nomeItem.isEmpty() && nomeItem.matches("^[A-Z0-9_ ]+$")) {
+            item.setNome(nomeItem);
+        } else {
+            System.out.println("Nome invalido , não é permitido simbolos");
+        }
+        Assertions.assertEquals("KIT ENFERMARIA",item.getNome());
     }
 }

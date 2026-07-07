@@ -6,7 +6,7 @@ public class CreateItemService {
 
     Item item = new Item();
 
-    public CreateItemService() {
+    public void CreateCodeItem() {
         String prefixoCodigo = "BRA_";
         String codigoItem = JOptionPane.showInputDialog("Digite o codigo do Item: ");
 
@@ -16,5 +16,7 @@ public class CreateItemService {
         } else  {
             JOptionPane.showMessageDialog(null, "código invalido , o código não permite simbolos e valores em branco");
         }
+
+
     }
 }
