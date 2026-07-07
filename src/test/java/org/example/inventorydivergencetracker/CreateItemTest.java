@@ -15,12 +15,12 @@ public class CreateItemTest {
         String prefixoCodigo = "BRA_";
         String codigoItem = "ENFERMARIA";
 
-        while(!codigoItem.isBlank()) {
+        while(!codigoItem.isBlank() && codigoItem.matches("^[a-zA-Z0-9]+$")) {
             String codigoCompleto = prefixoCodigo + codigoItem;
             item.setCodigoItem(codigoCompleto);
-            System.out.println(codigoCompleto);
         }
+        System.out.println("novo código gerado: "+item.getCodigoItem());
 
-        Assertions.assertEquals("BRA_ENFERMARIA",item.getCodigoItem);
+        Assertions.assertEquals("BRA_ENFERMARIA",item.getCodigoItem());
     }
 }
