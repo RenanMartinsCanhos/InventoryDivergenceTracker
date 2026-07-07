@@ -81,10 +81,9 @@ Algumas decisões de arquitetura valem explicar:
 - [ ] Cálculo de divergência: teórico vs. contado
 
 **Diferencial**
- Classificação automática de causa provável (`DivergenceCauseAnalyzer`)
- Histórico auditável por item (quem alterou, quando, origem/destino)
- Relatório de reconciliação por período/armazém, com ranking dos itens mais divergentes
- 
+- [ ] Classificação automática de causa provável (`DivergenceCauseAnalyzer`)
+- [ ] Histórico auditável por item (quem alterou, quando, origem/destino)
+- [ ] Relatório de reconciliação por período/armazém, com ranking dos itens mais divergentes
 ---
 
 ## Roadmap
