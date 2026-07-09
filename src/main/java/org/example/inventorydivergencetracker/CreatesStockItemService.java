@@ -23,7 +23,7 @@ public class CreatesStockItemService {
         if(!nameItem.isEmpty() && nameItem.matches("^[A-Z0-9_ ]+$")){
             stockItem.setNome(nameItem);
         } else {
-            System.err.println("nome invalido , não é permitido simbolos e valores em branco");
+            System.err.println("nome invalido , não é permitido simbolos e valores em branco  e letras minusculas");
         }
     }
 

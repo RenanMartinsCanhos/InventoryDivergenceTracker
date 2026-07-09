@@ -28,8 +28,20 @@ public class CreateStockItemTest {
         if (!nameItem.isEmpty() && nameItem.matches("^[A-Z0-9_ ]+$")) {
             stockItem.setNome(nameItem);
         } else {
-            System.out.println("Nome invalido , não é permitido simbolos");
+            System.out.println("Nome invalido , não é permitido simbolos, e letras minusculas");
         }
         Assertions.assertEquals("KIT ENFERMARIA", stockItem.getNome());
+    }
+    @Test
+    void validateDescription(){
+        StockItem stockItem = new StockItem();
+        String descriptionItem = "esse item contem 10 porcas";
+
+        if(!descriptionItem.isBlank() && descriptionItem.matches("^[a-zA-Z0-9_ ]+$")) {
+            stockItem.setDescricao(descriptionItem);
+        } else {
+            System.err.println("Na descrição não é permitido simbolos e valores em branco");
+        }
+        Assertions.assertEquals("esse item contem 10 porcas", stockItem.getDescricao());
     }
 }
